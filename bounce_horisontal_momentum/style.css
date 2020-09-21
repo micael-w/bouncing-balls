@@ -1,0 +1,212 @@
+:root{
+    --colorR: rgba(255, 150, 150, 1);
+    --colorG: rgba(100, 255, 150, 1);
+    --colorB: rgba(100, 150, 255, 1);
+
+    --colorR2: rgba(255, 150, 150, 0.2);
+    --colorG2: rgba(100, 255, 150, 0.2);
+    --colorB2: rgba(100, 150, 255, 0.2);
+}
+
+@keyframes bounceAnimation{
+
+    0%{
+        margin-top: 10vh;
+        background: var(--colorB);
+    }
+
+    50%{
+        background: var(--colorG);
+    }
+
+    85%{
+        margin-top: 38vh;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+    
+
+    100%{
+        background: var(--colorR);
+        margin-top: 45.5vh;
+        width: 180px;
+        height: 50px;
+        border-radius: 50% 50% 10% 10%;
+    }
+
+}
+
+@keyframes shadowAnimation{
+
+    0%{
+        width: 30px;
+        background: var(--colorB2);
+    }
+
+    50%{
+        background: var(--colorG2);
+    }
+
+    85%{
+        width: 100px;
+    }
+    
+
+    100%{
+        background: var(--colorR2);
+        width: 180px;
+        border-radius: 25%;
+    }
+
+}
+
+/*
+*  html5resetcss
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----------------------------------- css ---------------------------------- */
+
+.main-container{
+    position: relative;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.bounce-container{
+/*     background: red; */
+    position: relative;
+    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-end;
+}
+
+.bounce-wrapper{
+    position: relative;
+/*     background: pink; */
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    animation-name: bounceWrapperAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes bounceWrapperAnimation{
+    0%{
+        left: 0vw;
+    }
+
+/*     50%{
+        left: vw
+    } */
+
+    100%{
+        left: 100vw;
+    }
+}
+
+.bounce{
+    height: 100px;
+    width: 100px;
+    background: teal;
+    animation-name: bounceAnimation;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+    border-radius: 50%;
+}
+
+#bounce-one{
+    animation-delay: 0.2s;
+}
+
+#bounce-two{
+    animation-delay: 0.4s;
+}
+
+#bounce-three{
+    animation-delay: 0.6s;
+}
+
+
+.shadow-container{
+/*     background: blue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.shadow-wrapper{
+    position: relative;
+/*     background: red; */
+    height: 50vh;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    animation-name: shadowWrapperAnimation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes shadowWrapperAnimation{
+    0%{
+        left: 0vw;
+    }
+
+
+    100%{
+        left: 100vw;
+    }
+}
+
+.shadow{
+    height: 30px;
+    width: 100px;
+    animation-name: shadowAnimation;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
+    border-radius: 50%;
+}
+
+#shadow-one{
+    animation-delay: 0.2s;
+}
+
+#shadow-two{
+    animation-delay: 0.4s;
+}
+
+#shadow-three{
+    animation-delay: 0.6s;
+}
